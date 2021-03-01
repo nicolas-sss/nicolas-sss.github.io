@@ -15,10 +15,10 @@
     function jivo_onOpen(){ 
         console.log('teste'); 
         jivo_api.setContactInfo({
-          name: localStorage.getItem('userName'),
-          email: localStorage.getItem('userEmail'),
-          phone: localStorage.getItem('userPhone'),
-          description: localStorage.getItem('userDescription')
+          name: localStorage.getItem('userName') ? localStorage.getItem('userName') : 'Usuário Padrão',
+          email: localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : 'padrao@email.com',
+          phone: localStorage.getItem('userPhone') ? localStorage.getItem('userPhone') : '+5581999999999',
+          description: localStorage.getItem('userDescription') ? localStorage.getItem('userDescription') : 'Usuário Padrão description'
         });
      };
   </script>
