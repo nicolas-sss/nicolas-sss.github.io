@@ -12,6 +12,12 @@
   <script>
     function jivo_onOpen(){ 
         console.log('teste'); 
+        jivo_api.setContactInfo({
+          name: 'John Smith',
+          email: 'email@example.com',
+          phone: '+5581996906155',
+          description: 'descrição teste'
+        });
      };
   </script>
 
