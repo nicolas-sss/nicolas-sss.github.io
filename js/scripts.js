@@ -5,7 +5,7 @@
 function jivo_onOpen(){ 
     console.log('teste'); 
     jivo_api.setContactInfo({
-        name: localStorage.getItem('userName') ? localStorage.getItem('userName') : 'Usuário Padrão',
+        name: localStorage.getItem('userName') ? localStorage.getItem('userName') : 'Usuário Padrão teste',
         email: localStorage.getItem('userEmail') ? localStorage.getItem('userEmail') : 'padrao@email.com',
         phone: localStorage.getItem('userPhone') ? localStorage.getItem('userPhone') : '+5581999999999',
         description: localStorage.getItem('userDescription') ? localStorage.getItem('userDescription') : 'Usuário Padrão description'
