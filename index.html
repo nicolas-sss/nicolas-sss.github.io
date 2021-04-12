@@ -16,6 +16,48 @@
 <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/19655513.js"></script>
 <!-- End of HubSpot Embed Code -->
+
+<!-- Start HubSpot Widget Identification Code -->
+<script type="text/javascript">
+  window.hsConversationsSettings = {
+    loadImmediately: false
+  };
+
+  const urlIdent = "https://api.hubapi.com/conversations/v3/visitor-identification/tokens/create?hapikey=b0198459-60fd-4aea-bf65-3c163efc9f8d";
+
+  var http = new XMLHttpRequest();
+  
+  const email = 'test@test.com';
+
+  const loggedUser = {
+    email: email, 
+    firstName: 'Teste', 
+    lastName: 'eee'
+  }
+
+  http.open('POST', urlIdent, true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader('Content-type', 'application/json');
+  http.setRequestHeader('Accept', 'application/json');
+  http.setRequestHeader('Access-Control-Allow-Origin', '*');
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+      if(http.readyState == 4 && http.status == 200) {
+        const response = JSON.parse(http.responseText);
+        console.log(response);
+        window.hsConversationsSettings = {
+         identificationEmail: email,
+         identificationToken: res.token
+        };
+      }
+      window.HubSpotConversations.widget.load();
+
+  }
+  http.send(JSON.stringify(loggedUser));
+
+</script>
+<!-- End HubSpot Widget Identification Code -->
 </body>
 <footer>
 </footer>
