@@ -13,51 +13,23 @@
 <body>
     <h1>This is a Heading</h1>
     <p>This is a paragraph.</p>
-<!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/19655513.js"></script>
-<!-- End of HubSpot Embed Code -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
 
-<!-- Start HubSpot Widget Identification Code -->
-<script type="text/javascript">
-  window.hsConversationsSettings = {
-    loadImmediately: false
-  };
+    (function () {
+      var s1 = document.createElement('script'),
+        s0 = document.getElementsByTagName('script')[0];
 
-  const urlIdent = "https://api.hubapi.com/conversations/v3/visitor-identification/tokens/create?hapikey=b0198459-60fd-4aea-bf65-3c163efc9f8d";
+      s1.async = true;
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s1.src = 'https://embed.tawk.to/605c7a82067c2605c0bc24c7/1f1kjt3sf';
 
-  var http = new XMLHttpRequest();
-  
-  const email = 'test@test.com';
-
-  const loggedUser = {
-    email: email, 
-    firstName: 'Teste', 
-    lastName: 'eee'
-  }
-
-  http.open('POST', urlIdent, true);
-
-  //Send the proper header information along with the request
-  http.setRequestHeader('Content-type', 'application/json');
-  http.setRequestHeader('Accept', 'application/json');
-  http.setRequestHeader('Access-Control-Allow-Origin', '*');
-
-  http.onreadystatechange = function() {//Call a function when the state changes.
-      if(http.readyState == 4 && http.status == 200) {
-        const response = JSON.parse(http.responseText);
-        console.log(response);
-        window.hsConversationsSettings = {
-         identificationEmail: email,
-         identificationToken: res.token
-        };
-      }
-      window.HubSpotConversations.widget.load();
-
-  }
-  http.send(JSON.stringify(loggedUser));
+      s0.parentNode.insertBefore(s1, s0);
+    })();
 
 </script>
-<!-- End HubSpot Widget Identification Code -->
 </body>
 <footer>
 </footer>
